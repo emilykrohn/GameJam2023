@@ -1,12 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=13 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
+[ext_resource type="PackedScene" uid="uid://vhnyeaqfncq2" path="res://art/Tile.fbx" id="2_f0dw0"]
+[ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
+[ext_resource type="Texture2D" uid="uid://bn8v7alp5xi1e" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Height.png" id="4_vp7u1"]
+[ext_resource type="Texture2D" uid="uid://dpc37qe34psxh" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Metallic.png" id="5_0sd3p"]
+[ext_resource type="Texture2D" uid="uid://dn6x38y8wo73y" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Normal.png" id="6_wiyq0"]
+[ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
+[ext_resource type="PackedScene" uid="uid://dpgqjr2aihj1h" path="res://art/Geo/Tile.fbx" id="8_2bo0h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5htut"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mlkf7"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbdkf"]
+albedo_texture = ExtResource("3_81t68")
+metallic = 1.0
+metallic_texture = ExtResource("5_0sd3p")
+roughness_texture = ExtResource("7_j1swg")
+normal_enabled = true
+normal_texture = ExtResource("6_wiyq0")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_vp7u1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p2nwx"]
+material = SubResource("StandardMaterial3D_dbdkf")
 
 [node name="Main" type="Node"]
 
@@ -33,3 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 projection = 1
 size = 19.0
+
+[node name="Tile" parent="." instance=ExtResource("2_f0dw0")]
+transform = Transform3D(0.614256, 0, 0, 0, -0.0949683, 0, 0, 0, 1, 49.2978, 71.5717, 78.6936)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tile"]
+transform = Transform3D(2.82839, 0, 0, 0, -0.15445, 0, 0, 0, 2.30807, 0, 0, 0)
+mesh = SubResource("BoxMesh_p2nwx")
+
+[node name="Tile2" parent="." instance=ExtResource("8_2bo0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1136, 70.6886, 82.346)
