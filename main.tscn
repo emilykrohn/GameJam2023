@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=13 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dn6x38y8wo73y" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Normal.png" id="6_wiyq0"]
 [ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="7_ouxxb"]
+[ext_resource type="PackedScene" path="res://mob.tscn" id="8_d1m0y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5htut"]
 size = Vector3(60, 2, 60)
@@ -71,3 +72,8 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 projection = 1
 size = 19.0
+
+[node name="Mob" parent="." instance=ExtResource("8_d1m0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82044, 0.240912, 2.19226)
+
+[connection signal="hit" from="Player" to="Player" method="_on_hit"]

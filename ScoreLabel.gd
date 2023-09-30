@@ -4,8 +4,6 @@ extends Node
 
 @export var mob_scene: PackedScene
 
-func _ready():
-	$UserInterface/Retry.hide()
 
 
 func _on_mob_timer_timeout():
