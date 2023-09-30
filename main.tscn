@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, -0.0501572, 0.998741, 0, -0.998741, -0.05015
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_gnjbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.272264, 0)
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 19, 19)
