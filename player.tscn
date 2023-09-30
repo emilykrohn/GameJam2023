@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkm344o8pludk"]
+[gd_scene load_steps=4 format=3 uid="uid://bkm344o8pludk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_wbbng"]
+[ext_resource type="PackedScene" uid="uid://vhnyeaqfncq2" path="res://art/Tile.fbx" id="2_5io80"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
 radius = 0.53796
@@ -9,6 +10,8 @@ radius = 0.53796
 script = ExtResource("1_wbbng")
 
 [node name="Pivot" type="Node3D" parent="."]
+
+[node name="Tile" parent="Pivot" instance=ExtResource("2_5io80")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_km0ub")
