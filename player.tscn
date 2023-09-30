@@ -16,10 +16,16 @@ script = ExtResource("1_wbbng")
 [node name="Tile" parent="Pivot" instance=ExtResource("2_5io80")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0869263, 0)
 shape = SubResource("SphereShape3D_km0ub")
 
 [node name="MobDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1.03, 0, 0, 0, 0.145, 0, 0, 0, 1.03, 0, 0.106275, 0)
+transform = Transform3D(1.314, 0, 0, 0, 0.185, 0, 0, 0, 1.314, 0.00783184, 0.106275, -0.00611621)
 shape = SubResource("CylinderShape3D_7p20o")
+
+[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
