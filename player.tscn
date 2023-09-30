@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vhnyeaqfncq2" path="res://art/Tile.fbx" id="2_5io80"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
-radius = 0.578101
+radius = 0.53796
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_wbbng")
@@ -12,7 +12,6 @@ script = ExtResource("1_wbbng")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Tile" parent="Pivot" instance=ExtResource("2_5io80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000314832, 0.0125151, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_km0ub")
