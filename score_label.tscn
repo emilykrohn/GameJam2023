@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3qoexat6hjb3"]
+
+[ext_resource type="Script" path="res://score_label.gd" id="1_dg2g3"]
+
+[node name="ScoreLabel" type="Label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 55
+text = "Score: "
+script = ExtResource("1_dg2g3")

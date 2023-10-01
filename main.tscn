@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=15 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dpc37qe34psxh" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Metallic.png" id="5_0sd3p"]
 [ext_resource type="Texture2D" uid="uid://dn6x38y8wo73y" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Normal.png" id="6_wiyq0"]
 [ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
-[ext_resource type="Script" path="res://ScoreLabel.gd" id="7_ouxxb"]
 [ext_resource type="PackedScene" uid="uid://d38ymxox7qw6" path="res://mob.tscn" id="8_d1m0y"]
+[ext_resource type="PackedScene" uid="uid://c3qoexat6hjb3" path="res://score_label.tscn" id="8_itgdo"]
 [ext_resource type="MeshLibrary" path="res://mesh_library.meshlib" id="9_8fhdv"]
 
 [sub_resource type="GDScript" id="GDScript_hajpg"]
@@ -56,8 +56,6 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_jfr0b")
 size = Vector3(60, 2, 60)
 
-[sub_resource type="Theme" id="Theme_nmw7j"]
-
 [sub_resource type="Curve3D" id="Curve3D_04c20"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -22, 0, -18, 0, 0, 0, 0, 0, 0, 22, 0, -18, 0, 0, 0, 0, 0, 0, 22, 0, 20, 0, 0, 0, 0, 0, 0, -22, 0, 20, 0, 0, 0, 0, 0, 0, -22, 0, -14),
@@ -92,17 +90,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ScoreLabel" type="Label" parent="Player/UserInterface"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 40.0
-offset_right = 312.0
-offset_bottom = 181.0
-theme = SubResource("Theme_nmw7j")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 55
-text = "Score: 0"
-script = ExtResource("7_ouxxb")
+[node name="ScoreLabel" parent="Player/UserInterface" instance=ExtResource("8_itgdo")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_right = 176.0
+grow_horizontal = 1
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 19, 19)
@@ -130,6 +125,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22, 0
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
 
 [connection signal="hit" from="Player" to="Player" method="_on_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
