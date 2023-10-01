@@ -15,6 +15,10 @@ script/source = "extends Node
 
 @export var mob_scene: PackedScene
 
+var enemy_speed = 5
+
+func _physics_process(delta):
+	Global.player_position = $Player.position
 
 func _on_mob_timer_timeout():
 	# Create a new instance of the Mob scene.
@@ -31,6 +35,7 @@ func _on_mob_timer_timeout():
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
+
 
 func _on_player_hit():
 	$MobTimer.stop()
