@@ -128,5 +128,5 @@ autostart = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[connection signal="hit" from="Player" to="Player" method="_on_hit"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
