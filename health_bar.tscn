@@ -1,11 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1vk1kdgpwfeb"]
 
 [ext_resource type="Texture2D" uid="uid://deunvafbgwfri" path="res://art/UI/Healthbar.png" id="1_02isv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpvrv"]
-transparency = 1
-billboard_mode = 1
+[ext_resource type="PackedScene" uid="uid://c0r3yi1rnpcm8" path="res://healthbar2d.tscn" id="2_tpg3e"]
 
 [node name="HealthBar" type="Sprite3D"]
-material_override = SubResource("StandardMaterial3D_bpvrv")
+billboard = 1
 texture = ExtResource("1_02isv")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="HealthBar" parent="SubViewport" instance=ExtResource("2_tpg3e")]
