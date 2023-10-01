@@ -15,8 +15,6 @@ script/source = "extends Node
 
 @export var mob_scene: PackedScene
 
-var enemy_speed = 5
-
 func _physics_process(delta):
 	Global.player_position = $Player.position
 

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var enemy_speed = 5
+@export var enemy_speed = 2
 var current_player_position
 
 func _physics_process(_delta):
