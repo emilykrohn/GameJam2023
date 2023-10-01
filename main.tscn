@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dn6x38y8wo73y" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Normal.png" id="6_wiyq0"]
 [ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="7_ouxxb"]
-[ext_resource type="PackedScene" path="res://mob.tscn" id="8_d1m0y"]
+[ext_resource type="PackedScene" uid="uid://d38ymxox7qw6" path="res://mob.tscn" id="8_d1m0y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5htut"]
 size = Vector3(60, 2, 60)
@@ -20,7 +20,10 @@ roughness_texture = ExtResource("7_j1swg")
 normal_enabled = true
 normal_texture = ExtResource("6_wiyq0")
 heightmap_enabled = true
+heightmap_scale = -5.0
 heightmap_texture = ExtResource("4_vp7u1")
+uv1_scale = Vector3(0.04, 0.04, 0.04)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_mlkf7"]
 material = SubResource("StandardMaterial3D_jfr0b")
