@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=15 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
@@ -30,6 +30,12 @@ material = SubResource("StandardMaterial3D_jfr0b")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="Theme" id="Theme_nmw7j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de1j0"]
+albedo_color = Color(0.968627, 0.545098, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h6ovb"]
+material = SubResource("StandardMaterial3D_de1j0")
 
 [node name="Main" type="Node"]
 
@@ -78,5 +84,23 @@ size = 19.0
 
 [node name="Mob" parent="." instance=ExtResource("8_d1m0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82044, 0.240912, 2.19226)
+
+[node name="Cylinders" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -14)
+mesh = SubResource("CylinderMesh_h6ovb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -14)
+mesh = SubResource("CylinderMesh_h6ovb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14)
+mesh = SubResource("CylinderMesh_h6ovb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 15)
+mesh = SubResource("CylinderMesh_h6ovb")
 
 [connection signal="hit" from="Player" to="Player" method="_on_hit"]
