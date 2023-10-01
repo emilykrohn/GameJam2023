@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm3ws6l2xbppm"]
+[gd_scene load_steps=16 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="7_ouxxb"]
 [ext_resource type="PackedScene" uid="uid://d38ymxox7qw6" path="res://mob.tscn" id="8_d1m0y"]
-[ext_resource type="MeshLibrary" uid="uid://llhq6d7rjl1q" path="res://mesh_library.meshlib" id="9_8fhdv"]
+[ext_resource type="MeshLibrary" path="res://mesh_library.meshlib" id="9_8fhdv"]
 
 [sub_resource type="GDScript" id="GDScript_hajpg"]
 script/source = "extends Node
@@ -58,8 +58,16 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="Theme" id="Theme_nmw7j"]
 
+[sub_resource type="Curve3D" id="Curve3D_04c20"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -22, 0, -18, 0, 0, 0, 0, 0, 0, 22, 0, -18, 0, 0, 0, 0, 0, 0, 22, 0, 20, 0, 0, 0, 0, 0, 0, -22, 0, 20, 0, 0, 0, 0, 0, 0, -22, 0, -14),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Main" type="Node"]
 script = SubResource("GDScript_hajpg")
+mob_scene = ExtResource("8_d1m0y")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -104,15 +112,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 projection = 1
 size = 19.0
 
-[node name="Mob" parent="." instance=ExtResource("8_d1m0y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82044, 0.240912, 2.19226)
-
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.26132, 0)
 rotation_order = 0
 mesh_library = ExtResource("9_8fhdv")
+collision_layer = 2
 data = {
 "cells": PackedInt32Array(0, 65528, 0, -65536, 65528, 0, -131072, 65528, 0, -196608, 65528, 0, -262144, 65528, 0, -327680, 65528, 0, -393216, 65528, 0, -458752, 65528, 0, -524288, 65528, 0, 458752, 65528, 0, 393216, 65528, 0, 327680, 65528, 0, 262144, 65528, 0, 196608, 65528, 0, 131072, 65528, 0, 65536, 65528, 0, 458752, 8, 0, -131072, 8, 0, -196608, 8, 0, -262144, 8, 0, -327680, 8, 0, -393216, 8, 0, -458752, 8, 0, 524288, 8, 0, 524288, 65528, 0, -524288, 8, 0, -589824, 8, 0, -589824, 65528, 0, 393216, 8, 0, 327680, 8, 0, 262144, 8, 0, 196608, 8, 0, 131072, 8, 0, 65536, 8, 0, 0, 8, 0, -65536, 8, 0, 589824, 65528, 0, 589824, 65529, 0, 589824, 65530, 0, 589824, 65531, 0, 589824, 65532, 0, 589824, 65533, 0, 589824, 65534, 0, 589824, 0, 0, 589824, 1, 0, 589824, 2, 0, 589824, 3, 0, 589824, 4, 0, 589824, 5, 0, 589824, 6, 0, 589824, 7, 0, 589824, 65535, 0, 589824, 8, 0, -655360, 65528, 0, -655360, 65529, 0, -655360, 65530, 0, -655360, 65531, 0, -655360, 65532, 0, -655360, 65533, 0, -655360, 65535, 0, -655360, 0, 0, -655360, 1, 0, -655360, 2, 0, -655360, 3, 0, -655360, 4, 0, -655360, 5, 0, -655360, 6, 0, -655360, 7, 0, -655360, 8, 0, -655360, 65534, 0)
 }
 
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_04c20")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22, 0, -18)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="hit" from="Player" to="Player" method="_on_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

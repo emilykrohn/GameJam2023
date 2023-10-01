@@ -44,10 +44,6 @@ func _physics_process(delta):
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
-	# Jumping.
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		target_velocity.y = jump_impulse
-
 	# Iterate through all collisions that occurred this frame
 	# in C this would be for(int i = 0; i < collisions.Count; i++)
 	for index in range(get_slide_collision_count()):
