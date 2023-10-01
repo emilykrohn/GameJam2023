@@ -78,7 +78,3 @@ func die():
 
 func _on_mob_detector_body_entered(body):
 	die()
-
-
-func _on_hit():
-	pass # Replace with function body.
