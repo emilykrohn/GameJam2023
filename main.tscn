@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=17 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
+[ext_resource type="Script" path="res://main.gd" id="1_j4c7k"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
 [ext_resource type="Texture2D" uid="uid://bn8v7alp5xi1e" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Height.png" id="4_vp7u1"]
 [ext_resource type="Texture2D" uid="uid://dpc37qe34psxh" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Metallic.png" id="5_0sd3p"]
@@ -37,7 +38,16 @@ albedo_color = Color(0.968627, 0.545098, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_h6ovb"]
 material = SubResource("StandardMaterial3D_de1j0")
 
+[sub_resource type="Curve3D" id="Curve3D_lmrx6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -17.9899, 0, -14.2426, 0, 0, 0, 0, 0, 0, 17.9795, 0, -14.1231, 0, 0, 0, 0, 0, 0, 17.9795, 0, 13.7203, 0, 0, 0, 0, 0, 0, -17.1534, 0, 14.7958, 0, 0, 0, 0, 0, 0, -17.9899, 0, -14.2426),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Main" type="Node"]
+script = ExtResource("1_j4c7k")
+mob_scene = ExtResource("8_d1m0y")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -103,4 +113,15 @@ mesh = SubResource("CylinderMesh_h6ovb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 15)
 mesh = SubResource("CylinderMesh_h6ovb")
 
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_lmrx6")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.00332228, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.00332228, -17.9899, 0, -14.2426)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="hit" from="Player" to="Player" method="_on_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
