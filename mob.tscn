@@ -7,7 +7,6 @@
 size = Vector3(1, 0.256883, 1)
 
 [node name="Mob" type="CharacterBody3D"]
-collision_layer = 0
 script = ExtResource("1_yvhdw")
 
 [node name="Pivot" type="Node3D" parent="."]

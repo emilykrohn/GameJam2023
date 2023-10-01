@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 [gd_scene load_steps=14 format=3 uid="uid://bt387htu43thy"]
-=======
-[gd_scene load_steps=17 format=3 uid="uid://bt387htu43thy"]
->>>>>>> 3455e363195799976c8561914ddd475d781714e1
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
-[ext_resource type="Script" path="res://main.gd" id="1_j4c7k"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
 [ext_resource type="Texture2D" uid="uid://bn8v7alp5xi1e" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Height.png" id="4_vp7u1"]
 [ext_resource type="Texture2D" uid="uid://dpc37qe34psxh" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Metallic.png" id="5_0sd3p"]
@@ -37,22 +32,7 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="Theme" id="Theme_nmw7j"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de1j0"]
-albedo_color = Color(0.968627, 0.545098, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_h6ovb"]
-material = SubResource("StandardMaterial3D_de1j0")
-
-[sub_resource type="Curve3D" id="Curve3D_lmrx6"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -17.9899, 0, -14.2426, 0, 0, 0, 0, 0, 0, 17.9795, 0, -14.1231, 0, 0, 0, 0, 0, 0, 17.9795, 0, 13.7203, 0, 0, 0, 0, 0, 0, -17.1534, 0, 14.7958, 0, 0, 0, 0, 0, 0, -17.9899, 0, -14.2426),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
 [node name="Main" type="Node"]
-script = ExtResource("1_j4c7k")
-mob_scene = ExtResource("8_d1m0y")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -100,7 +80,6 @@ size = 19.0
 [node name="Mob" parent="." instance=ExtResource("8_d1m0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82044, 0.240912, 2.19226)
 
-<<<<<<< HEAD
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.26132, 0)
 rotation_order = 0
@@ -108,35 +87,5 @@ mesh_library = ExtResource("9_8fhdv")
 data = {
 "cells": PackedInt32Array(0, 65528, 0, -65536, 65528, 0, -131072, 65528, 0, -196608, 65528, 0, -262144, 65528, 0, -327680, 65528, 0, -393216, 65528, 0, -458752, 65528, 0, -524288, 65528, 0, 458752, 65528, 0, 393216, 65528, 0, 327680, 65528, 0, 262144, 65528, 0, 196608, 65528, 0, 131072, 65528, 0, 65536, 65528, 0, 458752, 8, 0, -131072, 8, 0, -196608, 8, 0, -262144, 8, 0, -327680, 8, 0, -393216, 8, 0, -458752, 8, 0, 524288, 8, 0, 524288, 65528, 0, -524288, 8, 0, -589824, 8, 0, -589824, 65528, 0, 393216, 8, 0, 327680, 8, 0, 262144, 8, 0, 196608, 8, 0, 131072, 8, 0, 65536, 8, 0, 0, 8, 0, -65536, 8, 0, 589824, 65528, 0, 589824, 65529, 0, 589824, 65530, 0, 589824, 65531, 0, 589824, 65532, 0, 589824, 65533, 0, 589824, 65534, 0, 589824, 0, 0, 589824, 1, 0, 589824, 2, 0, 589824, 3, 0, 589824, 4, 0, 589824, 5, 0, 589824, 6, 0, 589824, 7, 0, 589824, 65535, 0, 589824, 8, 0, -655360, 65528, 0, -655360, 65529, 0, -655360, 65530, 0, -655360, 65531, 0, -655360, 65532, 0, -655360, 65533, 0, -655360, 65535, 0, -655360, 0, 0, -655360, 1, 0, -655360, 2, 0, -655360, 3, 0, -655360, 4, 0, -655360, 5, 0, -655360, 6, 0, -655360, 7, 0, -655360, 8, 0, -655360, 65534, 0)
 }
-=======
-[node name="Cylinders" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -14)
-mesh = SubResource("CylinderMesh_h6ovb")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -14)
-mesh = SubResource("CylinderMesh_h6ovb")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14)
-mesh = SubResource("CylinderMesh_h6ovb")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 15)
-mesh = SubResource("CylinderMesh_h6ovb")
-
-[node name="SpawnPath" type="Path3D" parent="."]
-curve = SubResource("Curve3D_lmrx6")
-
-[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.00332228, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.00332228, -17.9899, 0, -14.2426)
-
-[node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
->>>>>>> 3455e363195799976c8561914ddd475d781714e1
 
 [connection signal="hit" from="Player" to="Player" method="_on_hit"]
-[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
