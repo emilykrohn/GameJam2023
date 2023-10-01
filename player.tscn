@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkm344o8pludk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_wbbng"]
-[ext_resource type="PackedScene" uid="uid://vhnyeaqfncq2" path="res://art/Tile.fbx" id="2_5io80"]
+[ext_resource type="PackedScene" uid="uid://bxq312obat4sw" path="res://player_art.tscn" id="2_orvk6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
 radius = 0.53796
@@ -13,7 +13,8 @@ script = ExtResource("1_wbbng")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="Tile" parent="Pivot" instance=ExtResource("2_5io80")]
+[node name="LowPolyKnight_low" parent="Pivot" instance=ExtResource("2_orvk6")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0869263, 0)

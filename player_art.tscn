@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxq312obat4sw"]
+
+[ext_resource type="PackedScene" uid="uid://c6g4ckh7xgjgj" path="res://art/KnightCharacter/LowPolyKnight_low.fbx" id="1_5xx2f"]
+[ext_resource type="Texture2D" uid="uid://bbol342elf3li" path="res://art/KnightCharacter/LowPolyKnight_low_standardSurface1_BaseColor.1001.png" id="2_slxna"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_veg0w"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfai6"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hr65i"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n07wm"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq46h"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kha2p"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lv42"]
+albedo_texture = ExtResource("2_slxna")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqtfy"]
+albedo_texture = ExtResource("2_slxna")
+
+[node name="LowPolyKnight_low" instance=ExtResource("1_5xx2f")]
+
+[node name="Body_low" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_veg0w")
+
+[node name="Neck_low" parent="RootNode" index="1"]
+material_override = SubResource("StandardMaterial3D_vfai6")
+
+[node name="Helmet_low" parent="RootNode" index="2"]
+material_override = SubResource("StandardMaterial3D_hr65i")
+
+[node name="Helmettop_low" parent="RootNode" index="3"]
+material_override = SubResource("StandardMaterial3D_n07wm")
+
+[node name="Leg1_low" parent="RootNode" index="4"]
+material_override = SubResource("StandardMaterial3D_jq46h")
+
+[node name="Arm2_low" parent="RootNode" index="5"]
+material_override = SubResource("StandardMaterial3D_kha2p")
+
+[node name="Leg2_low" parent="RootNode" index="6"]
+material_override = SubResource("StandardMaterial3D_2lv42")
+
+[node name="Arm1_low" parent="RootNode" index="7"]
+material_override = SubResource("StandardMaterial3D_rqtfy")

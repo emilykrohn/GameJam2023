@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://qivn6osbipjf"]
+
+[ext_resource type="PackedScene" uid="uid://rb0nae4wdyn6" path="res://art/EnemyCharacter/LowPolyEnemy_low.fbx" id="1_3f73q"]
+[ext_resource type="Texture2D" uid="uid://drcye8sdr8xr1" path="res://art/EnemyCharacter/LowPolyEnemy_low_standardSurface1_BaseColor.1001.png" id="2_xaiyn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppx6l"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gus7h"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ee75o"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4qnp"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de6mh"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87sdh"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbwu2"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hwuv"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xqin"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6a6t"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k672s"]
+albedo_texture = ExtResource("2_xaiyn")
+
+[node name="LowPolyEnemy_low" instance=ExtResource("1_3f73q")]
+
+[node name="Body_low" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_ppx6l")
+
+[node name="Neck_low" parent="RootNode" index="1"]
+material_override = SubResource("StandardMaterial3D_gus7h")
+
+[node name="Helmet_low" parent="RootNode" index="2"]
+material_override = SubResource("StandardMaterial3D_ee75o")
+
+[node name="Leg1_low" parent="RootNode" index="3"]
+material_override = SubResource("StandardMaterial3D_s4qnp")
+
+[node name="Arm2_low" parent="RootNode" index="4"]
+material_override = SubResource("StandardMaterial3D_de6mh")
+
+[node name="Leg2_low" parent="RootNode" index="5"]
+material_override = SubResource("StandardMaterial3D_87sdh")
+
+[node name="Arm1_low" parent="RootNode" index="6"]
+material_override = SubResource("StandardMaterial3D_jbwu2")
+
+[node name="KnightShoulderPad1_low" parent="RootNode" index="7"]
+material_override = SubResource("StandardMaterial3D_1hwuv")
+
+[node name="Horn1_low" parent="RootNode" index="8"]
+material_override = SubResource("StandardMaterial3D_3xqin")
+
+[node name="KnightShoulderPad2_low" parent="RootNode" index="9"]
+material_override = SubResource("StandardMaterial3D_j6a6t")
+
+[node name="Horn2_low" parent="RootNode" index="10"]
+material_override = SubResource("StandardMaterial3D_k672s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
