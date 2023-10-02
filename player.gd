@@ -67,10 +67,20 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 
+func take_damage(damage):
+	if $SubViewport/HealthBar.value < damage:
+		damage = $SubViewport/HealthBar.value
+	$SubViewport/HealthBar.value -= damage
+	
+
 # And this function at the bottom.
 func die():
 	hit.emit()
 	queue_free()
 
 func _on_mob_detector_body_entered(body):
-	die()
+	take_damage(10)
+	if $SubViewport/HealthBar.value == 0:
+		die()
+
+

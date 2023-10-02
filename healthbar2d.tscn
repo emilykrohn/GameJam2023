@@ -8,7 +8,7 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvsmj"]
-bg_color = Color(0.843137, 0.101961, 0.207843, 1)
+bg_color = Color(0.286275, 0.537255, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -16,6 +16,7 @@ border_width_bottom = 2
 border_color = Color(0.976471, 0.976471, 0.976471, 1)
 
 [node name="HealthBar" type="ProgressBar"]
+custom_minimum_size = Vector2(200, 26)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -29,5 +30,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_vbat4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nvsmj")
-value = 50.0
+value = 100.0
 show_percentage = false
