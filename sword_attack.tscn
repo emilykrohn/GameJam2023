@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dwaujayvy7sqn"]
+[gd_scene load_steps=2 format=3 uid="uid://dwaujayvy7sqn"]
+
+[ext_resource type="PackedScene" uid="uid://cyftmtpwvpmlg" path="res://art/Sword/LowSword_low.fbx" id="1_txms5"]
 
 [node name="SwordAttack" type="Node3D"]
+
+[node name="LowSword_low" parent="." instance=ExtResource("1_txms5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1709, 45.9839, 40.1514)

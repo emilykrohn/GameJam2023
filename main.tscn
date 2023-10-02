@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d38ymxox7qw6" path="res://mob.tscn" id="8_d1m0y"]
 [ext_resource type="PackedScene" path="res://score_label.tscn" id="8_itgdo"]
 [ext_resource type="MeshLibrary" uid="uid://llhq6d7rjl1q" path="res://mesh_library.meshlib" id="9_8fhdv"]
-[ext_resource type="PackedScene" path="res://game_over.tscn" id="9_tpfwr"]
-[ext_resource type="PackedScene" path="res://game_over_label.tscn" id="10_ijmt1"]
+[ext_resource type="PackedScene" uid="uid://dt3s13nky658f" path="res://game_over.tscn" id="9_tpfwr"]
+[ext_resource type="PackedScene" uid="uid://dpbxnogfphjbo" path="res://game_over_label.tscn" id="10_ijmt1"]
 [ext_resource type="PackedScene" uid="uid://dacpldc1fs5ib" path="res://countdown.tscn" id="10_n13e0"]
 
 [sub_resource type="GDScript" id="GDScript_hajpg"]

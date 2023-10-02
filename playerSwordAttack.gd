@@ -18,6 +18,10 @@ signal hit
 var target_velocity = Vector3.ZERO
 
 
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		anim_player.play("swordAttack")
+		hitbox.monitoring = true
 
 
 func _physics_process(delta):

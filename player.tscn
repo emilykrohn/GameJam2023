@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkm344o8pludk"]
+[gd_scene load_steps=8 format=3 uid="uid://bkm344o8pludk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_wbbng"]
 [ext_resource type="PackedScene" path="res://player_art.tscn" id="2_orvk6"]
+[ext_resource type="PackedScene" uid="uid://cyftmtpwvpmlg" path="res://art/Sword/LowSword_low.fbx" id="4_d7mj7"]
 [ext_resource type="PackedScene" uid="uid://c0r3yi1rnpcm8" path="res://healthbar2d.tscn" id="4_k8rf3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
@@ -19,6 +20,9 @@ script = ExtResource("1_wbbng")
 
 [node name="LowPolyKnight_low" parent="Pivot" instance=ExtResource("2_orvk6")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
+
+[node name="swordpivot" parent="Pivot/LowPolyKnight_low" instance=ExtResource("4_d7mj7")]
+transform = Transform3D(-0.204748, -0.17907, 0.419538, 0.155498, 0.404919, 0.248719, -0.428834, 0.232324, -0.110122, -0.477497, 0.937516, 0.151092)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.70414, 0, 0, 0, 1.70414, 0, 0, 0, 1.70414, 0, 1.49241, 0)
