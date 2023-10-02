@@ -6,3 +6,4 @@ func _process(delta):
 	time_elapsed += delta
 	var seconds_string := "%2d" % [time_elapsed]
 	text = "Score: " + str(seconds_string)
+	Global.score = seconds_string

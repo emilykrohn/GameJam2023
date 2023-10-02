@@ -13,7 +13,7 @@ script = ExtResource("1_yvhdw")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="LowPolyEnemy_low" parent="Pivot" instance=ExtResource("2_1asy6")]
-transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 0, 0, 0)
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_5ojk6")

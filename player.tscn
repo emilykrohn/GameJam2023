@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkm344o8pludk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_wbbng"]
-[ext_resource type="PackedScene" path="res://player_art.tscn" id="2_orvk6"]
+[ext_resource type="PackedScene" uid="uid://bxq312obat4sw" path="res://player_art.tscn" id="2_orvk6"]
 [ext_resource type="PackedScene" uid="uid://c0r3yi1rnpcm8" path="res://healthbar2d.tscn" id="4_k8rf3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
@@ -18,7 +18,7 @@ script = ExtResource("1_wbbng")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="LowPolyKnight_low" parent="Pivot" instance=ExtResource("2_orvk6")]
-transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, 0, 0)
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.70414, 0, 0, 0, 1.70414, 0, 0, 0, 1.70414, 0, 1.49241, 0)
@@ -33,7 +33,7 @@ transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0.00783184, 1.471
 shape = SubResource("CylinderShape3D_7p20o")
 
 [node name="HealthDisplay" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0060091, 3.33946, -0.00305653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0060091, 4.33946, -0.00305653)
 billboard = 1
 texture = SubResource("ViewportTexture_cguh4")
 

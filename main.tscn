@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bt387htu43thy"]
+[gd_scene load_steps=17 format=3 uid="uid://bt387htu43thy"]
 
 [ext_resource type="PackedScene" uid="uid://bkm344o8pludk" path="res://player.tscn" id="1_gnjbp"]
 [ext_resource type="Texture2D" uid="uid://qrb3uh0aocwq" path="res://art/Brick Texture/bricktexture_low_standardSurface1_BaseColor.png" id="3_81t68"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dn6x38y8wo73y" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Normal.png" id="6_wiyq0"]
 [ext_resource type="Texture2D" uid="uid://dqgxyhvtaky63" path="res://art/Brick Texture/bricktexture_low_standardSurface1_Roughness.png" id="7_j1swg"]
 [ext_resource type="PackedScene" uid="uid://d38ymxox7qw6" path="res://mob.tscn" id="8_d1m0y"]
-[ext_resource type="PackedScene" path="res://score_label.tscn" id="8_itgdo"]
-[ext_resource type="MeshLibrary" uid="uid://llhq6d7rjl1q" path="res://mesh_library.meshlib" id="9_8fhdv"]
+[ext_resource type="PackedScene" uid="uid://c3qoexat6hjb3" path="res://score_label.tscn" id="8_itgdo"]
+[ext_resource type="MeshLibrary" path="res://mesh_library.meshlib" id="9_8fhdv"]
+[ext_resource type="PackedScene" uid="uid://dt3s13nky658f" path="res://game_over.tscn" id="9_tpfwr"]
+[ext_resource type="PackedScene" uid="uid://dpbxnogfphjbo" path="res://game_over_label.tscn" id="10_ijmt1"]
 
 [sub_resource type="GDScript" id="GDScript_hajpg"]
 script/source = "extends Node
@@ -104,6 +106,16 @@ anchor_right = 0.0
 offset_left = 0.0
 offset_right = 176.0
 grow_horizontal = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" parent="." instance=ExtResource("9_tpfwr")]
+
+[node name="GameOverLabel" parent="GameOver" instance=ExtResource("10_ijmt1")]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 192.0
+offset_right = 742.0
+offset_bottom = 364.0
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 19, 19)
