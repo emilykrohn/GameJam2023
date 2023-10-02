@@ -91,4 +91,4 @@ func _on_mob_detector_body_entered(body):
 func _on_hit_area_enetered(area):
 	var mob = "mob"
 	if area.is_in_group("mob"):
-		mob.squash
+		mob.take_hit()

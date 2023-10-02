@@ -14,7 +14,7 @@ radius = 0.53796
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxMesh" id="BoxMesh_la1sb"]
-size = Vector3(0, 1.57, 0.36)
+size = Vector3(0.425, 1.925, 0.36)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_btxbi"]
 points = PackedVector3Array(0.00568841, -0.790688, -0.185688, 0.00568841, 0.790688, 0.189746, 0.00568841, -0.790688, 0.189746, 0.00568841, 0.790688, -0.185688)
@@ -51,10 +51,10 @@ transparent_bg = true
 [node name="HealthBar" parent="SubViewport" instance=ExtResource("3_etq0k")]
 
 [node name="swordpivot" parent="." instance=ExtResource("4_4qkq4")]
-transform = Transform3D(0.409496, 0.358141, -0.839076, 0.310997, 0.809838, 0.497437, 0.857668, -0.464648, 0.220245, 0.954995, 1.87503, -0.302184)
+transform = Transform3D(0.409496, 0.358141, -0.839076, 0.889108, 0.0494463, 0.455018, 0.204449, -0.932357, -0.298178, 0.948261, 1.55092, -0.494631)
 
 [node name="swordmesh" type="MeshInstance3D" parent="swordpivot"]
-transform = Transform3D(0.494175, -0.0757388, 0.866057, 0.0264499, 0.997046, 0.0721006, -0.868961, -0.0127236, 0.494718, 0.0533015, 0.0982144, 0.0951558)
+transform = Transform3D(0.553476, -0.0848275, 0.969984, 0.0296239, 1.11669, 0.080754, -0.973236, -0.0142506, 0.554085, 0.113246, 0.150641, -0.0276725)
 visible = false
 mesh = SubResource("BoxMesh_la1sb")
 skeleton = NodePath("../..")

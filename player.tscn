@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkm344o8pludk"]
+[gd_scene load_steps=10 format=3 uid="uid://bkm344o8pludk"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_wbbng"]
 [ext_resource type="PackedScene" path="res://player_art.tscn" id="2_orvk6"]
 [ext_resource type="PackedScene" uid="uid://cyftmtpwvpmlg" path="res://art/Sword/LowSword_low.fbx" id="4_d7mj7"]
 [ext_resource type="PackedScene" uid="uid://c0r3yi1rnpcm8" path="res://healthbar2d.tscn" id="4_k8rf3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bc8w0"]
+size = Vector3(0.425, 1.925, 0.36)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q4w4x"]
+points = PackedVector3Array(0.00568841, -0.790688, -0.185688, 0.00568841, 0.790688, 0.189746, 0.00568841, -0.790688, 0.189746, 0.00568841, 0.790688, -0.185688)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_km0ub"]
 radius = 0.53796
@@ -22,7 +28,20 @@ script = ExtResource("1_wbbng")
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
 
 [node name="swordpivot" parent="Pivot/LowPolyKnight_low" instance=ExtResource("4_d7mj7")]
-transform = Transform3D(-0.204748, -0.17907, 0.419538, 0.155498, 0.404919, 0.248719, -0.428834, 0.232324, -0.110122, -0.477497, 0.937516, 0.151092)
+transform = Transform3D(0.386152, 0.0144334, 0.317299, 0.315371, -0.0768485, -0.38031, 0.0377897, 0.493848, -0.0684542, -0.47021, 0.89322, 0.23667)
+
+[node name="swordmesh" type="MeshInstance3D" parent="Pivot/LowPolyKnight_low/swordpivot"]
+transform = Transform3D(0.553476, -0.0848275, 0.969984, 0.0296239, 1.11669, 0.080754, -0.973236, -0.0142506, 0.554085, 0.113246, 0.150641, -0.0276725)
+visible = false
+mesh = SubResource("BoxMesh_bc8w0")
+skeleton = NodePath("../..")
+
+[node name="hitbox" type="Area3D" parent="Pivot/LowPolyKnight_low/swordpivot/swordmesh"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/LowPolyKnight_low/swordpivot/swordmesh/hitbox"]
+transform = Transform3D(1, 7.45058e-09, 0, 7.45058e-09, 1, 5.96046e-08, 1.49012e-08, -2.98023e-08, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_q4w4x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.70414, 0, 0, 0, 1.70414, 0, 0, 0, 1.70414, 0, 1.49241, 0)
